@@ -8,9 +8,7 @@ dataset_DBLP <- read_excel("E:\\UCINET PROJECTS\\final_ungraph_-_Copy_2.xlsx")
 dataset_DBLP
 
 
-#2. Manage dataset
-#M_DATA<-as.data.frame(table(dataset_DBLP)) # Create an edge weight column named "Freq"
-#M2_DATA<-subset(M_DATA,Freq>0) # Delete all the edges having weight equal to 0
+
 
 
 dblp<-graph_from_data_frame(dataset_DBLP, directed = FALSE)
@@ -94,20 +92,6 @@ all_shortest_paths(graph,from=1)
 install.packages("DirectedClustering")
 library(DirectedClustering)
 
-paths <- paths(graph)
-
-for (i in 1:length(3)) {
-  print(shortest_paths[[i]])
-  print("-----------------------------------")
-}
-
-
-
-
-
-
-
-
 #closeness_centrality
 closeness_centrality <- closeness(graph, mode = "all", normalized = TRUE)
 min(closeness_centrality)
@@ -153,8 +137,6 @@ order_reached <- bfs_result$order
 order_reached
 #Print the order
 print(length(c(order_reached)))
-
-
 
 
 update.packages("igraph")
