@@ -88,6 +88,7 @@ print(avg_shortest_path)
 
 
 all_shortest_paths(graph,from=1)
+all_shortest_paths(graph,from=1,to=9 ,mode="all")
 
 install.packages("DirectedClustering")
 library(DirectedClustering)
